@@ -1,4 +1,4 @@
-using AutomaticPaymentReminder.Application.IRepositories.ISubscriptionTypeRepo;
+using AutomaticPaymentReminder.Application.Interfaces.IRepositories.ISubscriptionTypeRepo;
 using AutomaticPaymentReminder.Domain.Entites;
 using AutomaticPaymentReminder.Infrastructure.Persistence;
 using AutomaticPaymentReminder.Infrastructure.Repositories.BaseRepo;
