@@ -5,5 +5,5 @@ namespace AutomaticPaymentReminder.Application.Interfaces.IRepositories.ISubscri
 
 public interface ISubscriptionReadRepo : IBaseReadRepo<Subscriptions>
 {
-    
+    Task<bool> ExistsBySubscriptionNumAndProviderAsync(Guid customerId, string subscriptionNum, string serviceProvider);
 }

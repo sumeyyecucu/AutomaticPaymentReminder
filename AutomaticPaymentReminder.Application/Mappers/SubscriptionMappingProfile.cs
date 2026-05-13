@@ -12,6 +12,8 @@ public class SubscriptionMappingProfile : Profile
     {
         CreateMap<CreateSubscriptionRequest, Subscriptions>();
         CreateMap<UpdateSubscriptionRequest, Subscriptions>();
-        CreateMap<Subscriptions, GetSubscriptionResponse>();
+        CreateMap<Subscriptions, GetSubscriptionResponse>()
+            .ForMember(dest => dest.SubscriptionType, opt => opt.MapFrom(src => src.Type != null ? src.Type.Name : null))
+            .ForMember(dest => dest.SubscriptionTypeId, opt => opt.MapFrom(src => src.Type != null ? src.Type.Id : Guid.Empty));
     }
 }
