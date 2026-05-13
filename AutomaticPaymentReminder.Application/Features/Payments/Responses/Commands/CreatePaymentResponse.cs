@@ -2,5 +2,5 @@ namespace AutomaticPaymentReminder.Application.Features.Payments.Responses.Comma
 
 public class CreatePaymentResponse
 {
-    
+    public bool Success { get; set; }
 }
