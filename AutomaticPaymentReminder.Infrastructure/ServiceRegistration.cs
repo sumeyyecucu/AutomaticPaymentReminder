@@ -1,4 +1,6 @@
+using AutomaticPaymentReminder.Application.Interfaces.IServices;
 using AutomaticPaymentReminder.Infrastructure.Persistence;
+using AutomaticPaymentReminder.Infrastructure.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -11,5 +13,7 @@ public static class ServiceRegistration
     {
         services.AddDbContext<AutoPayReminderDbContext>(options =>
             options.UseMySQL(configuration.GetConnectionString("DefaultConnection")));
+        services.AddScoped<IPaymentGatewayService, MockPaymentGatewayService>();
+        services.AddScoped<IDebtQueryService, MockDebtQueryService>();
     }
 }
