@@ -21,6 +21,7 @@ public class CreateCustomerHandler : IRequestHandler<CreateCustomerRequest, Crea
     public async Task<CreateCustomerResponse> Handle(CreateCustomerRequest request, CancellationToken cancellationToken)
     {
         var entity = _mapper.Map<Customers>(request);
+        entity.CustomerNum = new Random().Next(1000, 9999);
         await _customerWriteRepo.AddAsync(entity);
         await _customerWriteRepo.SaveChangesAsync();
         return new CreateCustomerResponse();

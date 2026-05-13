@@ -11,7 +11,7 @@ public class CustomerMappingProfile : Profile
     {
         CreateMap<CreateCustomerRequest, Customers>();
         CreateMap<UpdateCustomerRequest, Customers>();
-        CreateMap<Customers, GetAllCustomersResponse>();
+     
         CreateMap<Customers, GetCustomerResponse>();
     }
 }

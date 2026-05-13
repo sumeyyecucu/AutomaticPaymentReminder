@@ -2,6 +2,7 @@ namespace AutomaticPaymentReminder.Application.Features.Customers.Responses.Quer
 
 public class GetCustomerResponse
 {
+    public Guid Id { get; set; }
     public int CustomerNum { get; set; }
     public string NameSurname { get; set; } = string.Empty;
     public string Email { get; set; } = string.Empty;

@@ -3,6 +3,6 @@ using MediatR;
 
 namespace AutomaticPaymentReminder.Application.Features.Customers.Requests;
 
-public class GetAllCustomersRequest : IRequest<List<GetAllCustomersResponse>>
+public class GetAllCustomersRequest : IRequest<List<GetCustomerResponse>>
 {
 }

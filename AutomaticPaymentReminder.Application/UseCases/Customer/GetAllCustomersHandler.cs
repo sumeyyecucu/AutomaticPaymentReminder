@@ -6,7 +6,7 @@ using MediatR;
 
 namespace AutomaticPaymentReminder.Application.UseCases.Customer;
 
-public class GetAllCustomersHandler : IRequestHandler<GetAllCustomersRequest, List<GetAllCustomersResponse>>
+public class GetAllCustomersHandler : IRequestHandler<GetAllCustomersRequest, List<GetCustomerResponse>>
 {
     private readonly ICustomerReadRepo _customerReadRepo;
     private readonly IMapper _mapper;
@@ -17,9 +17,9 @@ public class GetAllCustomersHandler : IRequestHandler<GetAllCustomersRequest, Li
         _mapper = mapper;
     }
 
-    public async Task<List<GetAllCustomersResponse>> Handle(GetAllCustomersRequest request, CancellationToken cancellationToken)
+    public async Task<List<GetCustomerResponse>> Handle(GetAllCustomersRequest request, CancellationToken cancellationToken)
     {
         var entities = _customerReadRepo.GetAll();
-        return _mapper.Map<List<GetAllCustomersResponse>>(entities);
+        return _mapper.Map<List<GetCustomerResponse>>(entities);
     }
 }
