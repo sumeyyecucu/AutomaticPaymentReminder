@@ -1,6 +1,6 @@
 namespace AutomaticPaymentReminder.Application.Interfaces.IServices;
 
-public interface INotificationService
+public interface IEmailService
 {
-    
+    Task SendReminderAsync(string email,string subscriptionName, DateTime paymentDate);
 }

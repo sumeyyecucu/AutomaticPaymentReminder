@@ -4,6 +4,7 @@ namespace AutomaticPaymentReminder.Application.Interfaces.IServices;
 
 public interface IDebtQueryService
 {
-    Task<DebtQueryResult?> GetDebtAsync(int number);
+    DebtQueryResult? GetDebtAsync(int number);
+    public IQueryable<DebtQueryResult> GetAllDebtAsync();
 
 }

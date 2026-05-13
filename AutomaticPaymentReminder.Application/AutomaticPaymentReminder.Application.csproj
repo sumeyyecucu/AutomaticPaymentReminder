@@ -19,9 +19,7 @@
     <ItemGroup>
       <Folder Include="Features\Payments\Responses\Queries\" />
       <Folder Include="Features\Subscriptions\Requests\Commands\" />
-      <Folder Include="Features\Subscriptions\Requests\Queries\" />
       <Folder Include="Features\Subscriptions\Responses\Commands\" />
-      <Folder Include="Features\Subscriptions\Responses\Queries\" />
       <Folder Include="Features\SubscriptionTypes\Requests\Commands\" />
       <Folder Include="Features\SubscriptionTypes\Requests\Queries\" />
       <Folder Include="Features\SubscriptionTypes\Responses\Commands\" />

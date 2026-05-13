@@ -8,7 +8,7 @@ public class Subscriptions : BaseEntity
     public int? SubscriptionNum { get; set; }
     public int? CustomerNum { get; set; }
     public bool IsActive { get; set; }
-    public Customers Customers { get; set; }
+    public Customers Customer { get; set; }
     public List<Payments> Payments { get; set; }
     
 }

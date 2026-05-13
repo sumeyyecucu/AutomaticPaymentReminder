@@ -5,15 +5,16 @@ namespace AutomaticPaymentReminder.Infrastructure.Services;
 
 public class MockDebtQueryService : IDebtQueryService
 {
-    private static readonly List<DebtQueryResult> _mockData = new()
+    private static readonly List<DebtQueryResult> mockData = new()
     {
         new DebtQueryResult
         {
             SubscriptionNum = 1001,
             CustomerNum = 201,
             ServiceProvider = "İski",
-            Year = 2025,
-            Month = 3,
+            DueDate = new DateTime(2026, 3, 14),
+            Year = 2026,
+            Month = 2,
             Amount = 349.99m
         },
         new DebtQueryResult
@@ -21,26 +22,27 @@ public class MockDebtQueryService : IDebtQueryService
             SubscriptionNum = 1002,
             CustomerNum = 201,
             ServiceProvider = "Turkcell",
-            Year = 2025,
+            DueDate = new DateTime(2026, 5, 16),
+            Year = 2026,
             Month = 4,
             Amount = 459.99m
-
         },
         new DebtQueryResult
         {
             SubscriptionNum = 1003,
             CustomerNum = 202,
             ServiceProvider = "Enerjisa",
+            DueDate = new DateTime(2026, 5, 22),
             Year = 2025,
-            Month = 2,
+            Month = 4,
             Amount = 39.99m
         }
     };
     
 
-    public  Task<DebtQueryResult?> GetDebtAsync(int number)
+    public DebtQueryResult? GetDebtAsync(int number)
     {
-        var result =  _mockData.FirstOrDefault(x => x.SubscriptionNum == number || x.CustomerNum == number);
+        var result =  mockData.FirstOrDefault(x => x.SubscriptionNum == number || x.CustomerNum == number);
         if (result != null)
         {
             var debt = new DebtQueryResult
@@ -50,9 +52,15 @@ public class MockDebtQueryService : IDebtQueryService
                 Amount = result.Amount,
                 Year = result.Year,
                 Month = result.Month,
+                DueDate = result.DueDate,
             };
-            return Task.FromResult<DebtQueryResult?>(debt);
+            return debt;
         }
-        return Task.FromResult<DebtQueryResult?>(null);
+        return null;
+    }
+
+    public IQueryable<DebtQueryResult> GetAllDebtAsync()
+    {
+        return mockData.AsQueryable();
     }
 }
