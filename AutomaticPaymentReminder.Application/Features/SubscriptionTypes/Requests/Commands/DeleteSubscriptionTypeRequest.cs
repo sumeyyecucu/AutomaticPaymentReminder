@@ -1,6 +1,9 @@
-namespace AutomaticPaymentReminder.Application.Features.SubscriptionTypes.Requests;
+using AutomaticPaymentReminder.Application.Features.SubscriptionTypes.Responses.Commands;
+using MediatR;
 
-public class DeleteSubscriptionTypeRequest
+namespace AutomaticPaymentReminder.Application.Features.SubscriptionTypes.Requests.Commands;
+
+public class DeleteSubscriptionTypeRequest : IRequest<DeleteSubscriptionTypeResponse>
 {
-
+    public Guid Id { get; set; }
 }
