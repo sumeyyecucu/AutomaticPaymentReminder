@@ -143,11 +143,10 @@ Bu projede yapay zeka aşağıdaki alanlarda kullanılmıştır:
 
 | Alan | Kullanım |
 |------|----------|
-| Kod üretimi | Repository, handler ve mock servis iskeletleri oluşturuldu |
+| Kod üretimi | Handler ve mock servis iskeletleri oluşturuldu |
 | Refactoring | Servis katmanı ve controller yapısı gözden geçirildi |
 | Validation kuralları | FluentValidation kuralları önerildi, gözden geçirilerek uygulandı |
-| API tasarımı | Endpoint isimlendirme ve route yapısı için öneri alındı |
-| Dokümantasyon | ER diagram, akış diyagramı ve README oluşturuldu |
+| ExceptionHandler | Global ve Custom Exception Handlerlar oluşturuldu |
 
 > Üretilen tüm çıktılar doğrudan kullanılmamış; gözden geçirilerek ve projeye uygun şekilde düzenlenerek uygulanmıştır.
 
@@ -156,6 +155,5 @@ Bu projede yapay zeka aşağıdaki alanlarda kullanılmıştır:
 ## Kapsam Dışı Bırakılanlar
 
 - JWT authentication (Header bazlı müşteri kimliği ile çözüldü)
-- Gerçek SMS/Email bildirimi (Mock endpoint ile simüle edildi)
 - Uzun süreli ödeme yapılmayan aboneliklerin otomatik pasife alınması
 - Ödeme iadesi (Refund)
