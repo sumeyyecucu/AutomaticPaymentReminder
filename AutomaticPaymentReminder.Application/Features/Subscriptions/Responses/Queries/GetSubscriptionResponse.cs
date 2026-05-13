@@ -2,6 +2,8 @@ namespace AutomaticPaymentReminder.Application.Features.Subscriptions.Responses.
 
 public class GetSubscriptionResponse
 {
+    public Guid Id { get; set; }
+    public Guid SubscriptionTypeId { get; set; }
     public string SubscriptionType { get; set; }
     public string? ServiceProvider { get; set; }
     public int? SubscriptionNum { get; set; }

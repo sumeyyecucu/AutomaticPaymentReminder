@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace AutomaticPaymentReminder.API.Controllers;
 
 [ApiController]
-[Route("api/[controller]")]
+[Route("api/subscriptions")]
 public class SubscriptionController : BaseController
 {
     private readonly IMediator _mediator;

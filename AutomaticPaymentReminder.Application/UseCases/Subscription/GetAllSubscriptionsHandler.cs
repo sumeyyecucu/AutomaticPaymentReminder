@@ -3,6 +3,7 @@ using AutomaticPaymentReminder.Application.Features.Subscriptions.Requests.Queri
 using AutomaticPaymentReminder.Application.Features.Subscriptions.Responses.Queries;
 using AutomaticPaymentReminder.Application.Interfaces.IRepositories.ISubscriptionRepo;
 using MediatR;
+using Microsoft.EntityFrameworkCore;
 
 namespace AutomaticPaymentReminder.Application.UseCases.Subscription;
 
@@ -19,9 +20,8 @@ public class GetAllSubscriptionsHandler : IRequestHandler<GetAllSubscriptionsReq
 
     public async Task<List<GetSubscriptionResponse>> Handle(GetAllSubscriptionsRequest request, CancellationToken cancellationToken)
     {
-        var entity = _subscriptionReadRepo.GetAll();
+        var entity = _subscriptionReadRepo.GetAll().Include(s => s.Type);
         var subscriptions = _mapper.Map<List<GetSubscriptionResponse>>(entity);
         return subscriptions;
-
     }
 }

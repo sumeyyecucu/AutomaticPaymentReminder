@@ -5,7 +5,8 @@ namespace AutomaticPaymentReminder.Application.Features.Subscriptions.Requests.C
 
 public class CreateSubscriptionRequest : IRequest<CreateSubscriptionResponse>
 {
-    public string SubscriptionType { get; set; }
+    public Guid CustomerId { get; set; }
+    public Guid SubscriptionId { get; set; }
     public string? ServiceProvider { get; set; }
     public int? SubscriptionNum { get; set; }
     public int? CustomerNum { get; set; }
