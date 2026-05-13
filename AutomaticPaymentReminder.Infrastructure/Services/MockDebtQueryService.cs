@@ -9,8 +9,8 @@ public class MockDebtQueryService : IDebtQueryService
     {
         new DebtQueryResult
         {
-            SubscriptionNum = 1001,
-            CustomerNum = 201,
+            SubscriptionNum = "1001",
+            CustomerNum = "5456",
             ServiceProvider = "İski",
             DueDate = new DateTime(2026, 3, 14),
             Year = 2026,
@@ -19,8 +19,8 @@ public class MockDebtQueryService : IDebtQueryService
         },
         new DebtQueryResult
         {
-            SubscriptionNum = 1002,
-            CustomerNum = 201,
+            SubscriptionNum = "1002",
+            CustomerNum = "5456",
             ServiceProvider = "Turkcell",
             DueDate = new DateTime(2026, 5, 16),
             Year = 2026,
@@ -29,8 +29,8 @@ public class MockDebtQueryService : IDebtQueryService
         },
         new DebtQueryResult
         {
-            SubscriptionNum = 1003,
-            CustomerNum = 202,
+            SubscriptionNum = "1003",
+            CustomerNum = "5456",
             ServiceProvider = "Enerjisa",
             DueDate = new DateTime(2026, 5, 22),
             Year = 2025,
@@ -40,7 +40,7 @@ public class MockDebtQueryService : IDebtQueryService
     };
     
 
-    public DebtQueryResult? GetDebtAsync(int number)
+    public DebtQueryResult? GetDebtAsync(string number)
     {
         var result =  mockData.FirstOrDefault(x => x.SubscriptionNum == number || x.CustomerNum == number);
         if (result != null)
