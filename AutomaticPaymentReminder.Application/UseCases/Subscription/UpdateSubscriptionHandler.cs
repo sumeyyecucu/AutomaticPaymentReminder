@@ -21,7 +21,8 @@ public class UpdateSubscriptionHandler: IRequestHandler<UpdateSubscriptionReques
     public async Task<UpdateSubscriptionResponse> Handle(UpdateSubscriptionRequest request, CancellationToken cancellationToken)
     {
         var entity = _mapper.Map<Subscriptions>(request);
-        _subscriptionWriteRepo.UpdateAsync(entity);
+        _subscriptionWriteRepo.Update(entity);
+        await _subscriptionWriteRepo.SaveChangesAsync();
         return new UpdateSubscriptionResponse();
         
     }

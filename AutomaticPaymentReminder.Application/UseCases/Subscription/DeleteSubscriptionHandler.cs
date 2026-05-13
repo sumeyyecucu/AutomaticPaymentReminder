@@ -18,6 +18,7 @@ public class DeleteSubscriptionHandler : IRequestHandler<DeleteSubscriptionReque
     public async Task<DeleteSubscriptionResponse> Handle(DeleteSubscriptionRequest request, CancellationToken cancellationToken)
     {
         await _subscriptionWriteRepo.DeleteAsync(request.Id);
+        await _subscriptionWriteRepo.SaveChangesAsync();
         return new DeleteSubscriptionResponse();
     }
 }

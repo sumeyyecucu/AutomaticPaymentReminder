@@ -30,6 +30,7 @@ public class CreatePaymentHandler : IRequestHandler<CreatePaymentRequest,CreateP
             IsPaid = success
         };
         await _paymentWriteRepo.AddAsync(newPayment);
+        await _paymentWriteRepo.SaveChangesAsync();
         return new CreatePaymentResponse()
         {
             Success = success,

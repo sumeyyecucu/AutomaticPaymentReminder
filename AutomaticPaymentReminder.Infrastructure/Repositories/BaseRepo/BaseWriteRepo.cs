@@ -19,7 +19,7 @@ public class BaseWriteRepo<T>(AutoPayReminderDbContext dbContext) : IBaseWriteRe
        return entry.State == EntityState.Added;
     }
 
-    public bool UpdateAsync(T entity)
+    public bool Update(T entity)
     {
        EntityEntry<T> entry = Table.Update(entity);
        return entry.State == EntityState.Modified;
