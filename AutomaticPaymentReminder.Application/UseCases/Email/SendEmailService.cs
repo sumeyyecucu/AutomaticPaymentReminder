@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace AutomaticPaymentReminder.Application.UseCases;
 
-public class SendEmailService
+public class SendEmailService :  ISendEmailService
 {
     private readonly IEmailService _emailService;
     private readonly IDebtQueryService _debtQueryService;

@@ -17,7 +17,7 @@ public class CreateCustomerValidator : AbstractValidator<CreateCustomerRequest>
 
         RuleFor(x => x.Phone)
             .NotEmpty().WithMessage("Telefon boş olamaz.")
-            .Matches(@"^\+?[0-9]{10,15}$").WithMessage("Geçerli bir telefon numarası giriniz.");
+            .Matches(@"^05[0-9]{9}$").WithMessage("Telefon numarası 05 ile başlamalı ve 11 haneli olmalıdır.");
 
        
     }

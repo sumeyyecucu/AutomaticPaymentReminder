@@ -1,5 +1,6 @@
 using AutoMapper;
 using AutomaticPaymentReminder.Application.Features.Customers.Requests;
+using AutomaticPaymentReminder.Application.Features.Customers.Requests.Commands;
 using AutomaticPaymentReminder.Application.Features.Customers.Responses.Commands;
 using AutomaticPaymentReminder.Application.Interfaces.IRepositories.ICustomerRepo;
 using AutomaticPaymentReminder.Domain.Entites;

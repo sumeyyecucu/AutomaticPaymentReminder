@@ -1,4 +1,5 @@
 using AutomaticPaymentReminder.Application.Features.Customers.Requests;
+using AutomaticPaymentReminder.Application.Features.Customers.Requests.Commands;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 

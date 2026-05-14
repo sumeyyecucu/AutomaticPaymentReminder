@@ -1,4 +1,5 @@
 using AutomaticPaymentReminder.Application.Behaviors;
+using AutomaticPaymentReminder.Application.Interfaces.IServices;
 using AutomaticPaymentReminder.Application.UseCases;
 using FluentValidation;
 using MediatR;
@@ -14,6 +15,6 @@ public static class ServiceRegistration
         services.AddAutoMapper(cfg => cfg.AddMaps(typeof(ServiceRegistration).Assembly));
         services.AddValidatorsFromAssembly(typeof(ServiceRegistration).Assembly);
         services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationBehavior<,>));
-        services.AddScoped<SendEmailService>();
+        services.AddScoped<ISendEmailService,SendEmailService>();
     }
 }

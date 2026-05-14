@@ -1,4 +1,5 @@
 using AutomaticPaymentReminder.Application.Features.Customers.Requests;
+using AutomaticPaymentReminder.Application.Features.Customers.Requests.Commands;
 using FluentValidation;
 
 namespace AutomaticPaymentReminder.Application.Validators.Customers;
@@ -7,8 +8,6 @@ public class UpdateCustomerValidator : AbstractValidator<UpdateCustomerRequest>
 {
     public UpdateCustomerValidator()
     {
-        RuleFor(x => x.Id)
-            .NotEmpty().WithMessage("Müşteri Id boş olamaz.");
 
         RuleFor(x => x.NameSurname)
             .NotEmpty().WithMessage("Ad Soyad boş olamaz.")
@@ -20,18 +19,6 @@ public class UpdateCustomerValidator : AbstractValidator<UpdateCustomerRequest>
 
         RuleFor(x => x.Phone)
             .NotEmpty().WithMessage("Telefon boş olamaz.")
-            .Matches(@"^\+?[0-9]{10,15}$").WithMessage("Geçerli bir telefon numarası giriniz.");
-
-        RuleFor(x => x.CustomerNum)
-            .GreaterThan(0).WithMessage("Müşteri numarası 0'dan büyük olmalıdır.");
-
-        RuleFor(x => x.Address)
-            .NotEmpty().WithMessage("Adres boş olamaz.");
-
-        RuleFor(x => x.City)
-            .NotEmpty().WithMessage("Şehir boş olamaz.");
-
-        RuleFor(x => x.State)
-            .NotEmpty().WithMessage("İlçe/Eyalet boş olamaz.");
+            .Matches(@"^05[0-9]{9}$").WithMessage("Telefon numarası 05 ile başlamalı ve 11 haneli olmalıdır.");
     }
 }
